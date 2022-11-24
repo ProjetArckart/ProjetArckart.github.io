@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+html, body {
+  min-height: 100vh;
+}
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+:root {
+  --gray: #c2c2c2;
+
+  --red: #fe567f;
+  --yellow: #eef7a4;
+  --blue: #62a8f7;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 30px;
+  background-color: black;
+  color: var(--gray);
+
+  font-family: Roboto;
+}
+
+nav {
+  position: absolute;
+  top: 30px;
+
+  display: flex;
+  align-items: center;
+
+  width: calc(100% - 60px);
+  height: 60px;
+  background-color: black;
+
+  font-size: 20px;
+
+  border: solid 1px;
+  border-radius: 9e9vh;
+}
+nav > * {
+  padding-inline: 50px;
+}
+nav > .logo {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+nav > .section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 30px;
+
+  border-left: solid 1px;
+}
+nav .part {
+  display: flex;
+  gap: 30px;
+}
+nav > .section:nth-child(2) {
+  flex-grow: 1;
+}
+
+
+h1 {
+  font-size: 130px;
+}
+h1 span.arc {
+  background-image: radial-gradient( ellipse at 100% 50%,
+    var(--red) 10%,
+    var(--yellow),
+    var(--blue) 80%
+  );
+  color: transparent;
+  background-clip: text;
+}
+h2 {
+  font-weight: 300;
+}
+button {
+  visibility: hidden;
+  font-size: 20px;
+  color: var(--gray);
+}
+button::after {
+  content: attr(value);
+  visibility: visible;
+
+  display: block;
+  background-color: black;
+  width: 140px;
+  height: 60px;
+  line-height: 60px;
+
+  outline: solid 2px var(--gray);
+  border-radius: 9e9vh;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+button::after:hover {
+  background-color: var(--gray);
+  color: black;
+}

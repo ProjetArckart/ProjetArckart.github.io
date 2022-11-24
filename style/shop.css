@@ -1,0 +1,53 @@
+section.trending {
+  display: flex;
+  justify-content: center;
+}
+.products, .products::before {
+  background-image: url(./assets/landscape.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0;
+
+  border-radius: 20px;
+}
+.products {
+  position: relative;
+
+  width: 100%;
+  max-width: 700px;
+  /*  Taking a bit less than the whole screen so we
+      understand that we can scroll down  */
+  height: calc(100vh - 0 - 3*var(--v-padding));
+  max-height: 700px;
+}
+.products::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  z-index: -1;
+
+  filter: blur(50px);
+  transform: scale(1.05);
+}
+.products > .arrows {
+  display: flex;
+  justify-content: space-between;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: calc(100% + 40px);
+  height: 60px;
+}
+.products .arrow {
+  height: 100%;
+  aspect-ratio: 1;
+  background-color: #9999;
+
+  border-radius: 50%;
+}
